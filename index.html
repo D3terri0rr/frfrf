@@ -2,31 +2,53 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Catálogo</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Catálogo Seguro</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
+
 <body>
 
-  <div id="login">
-    <h2>Acesso restrito</h2>
-    <form onsubmit="verificarSenha(event)">
-      <input type="password" id="senha" placeholder="Digite a senha" required />
-      <button type="submit">Entrar</button>
-    </form>
+  <!-- CANVAS ARTÍSTICO -->
+  <canvas id="portal"></canvas>
+
+  <!-- LOGIN -->
+  <div id="login" class="login-wrapper">
+    <div class="portal-ui">
+      <h1>ACCESS</h1>
+
+      <form onsubmit="verificarSenha(event)">
+        <input
+          id="senha"
+          type="password"
+          placeholder="Senha de acesso"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">ENTRAR</button>
+      </form>
+    </div>
   </div>
 
-  <div id="catalogo" style="display:none;">
+  <!-- CATÁLOGO -->
+  <div id="catalogo" class="catalogo">
+    <h2>Catálogo</h2>
+
     <input
-      type="text"
       id="busca"
+      type="text"
       placeholder="Buscar produto..."
       oninput="filtrarProdutos()"
     />
 
     <div id="produtos"></div>
-    <div id="paginacao"></div>
   </div>
 
-  <script src="app.js"></script>
+  <!-- SCRIPTS -->
+  <script src="canvas.js"></script>
+  <script src="app.js?v=5"></script>
+
 </body>
 </html>
