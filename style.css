@@ -1,27 +1,148 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
 }
 
-#login {
-  max-width: 300px;
-  margin: auto;
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #050010;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* =========================
+   CANVAS
+========================= */
+
+#portal {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-wrapper {
+  position: relative;
+  z-index: 3;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-ui {
+  width: 320px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(15, 5, 30, 0.9);
+  border: 2px solid #ff4fd8;
+  box-shadow:
+    0 0 30px #ff4fd8,
+    inset 0 0 25px #784ba0;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 25px #ff4fd8;
+  }
+  50% {
+    box-shadow: 0 0 55px #00eaff;
+  }
+}
+
+.portal-ui h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+}
+
+.portal-ui input,
+.portal-ui button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 12px;
+}
+
+.portal-ui input {
+  background: #140022;
+  color: #fff;
+}
+
+.portal-ui button {
+  background: linear-gradient(90deg, #ff4fd8, #784ba0);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.portal-ui button:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   CATÁLOGO
+========================= */
+
+.catalogo {
+  display: none;
+  position: relative;
+  z-index: 3;
+  padding: 40px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.catalogo h2 {
+  margin-bottom: 20px;
+}
+
+#busca {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+#produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .produto {
-  border: 1px solid #ccc;
+  background: rgba(20, 5, 40, 0.85);
   padding: 15px;
-  margin-bottom: 15px;
+  border-radius: 14px;
+  border: 1px solid #784ba0;
+  box-shadow: 0 0 15px #784ba0;
+  transition: transform .2s ease;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
 }
 
 .produto img {
-  max-width: 100%;
+  width: 100%;
+  border-radius: 10px;
 }
 
-.compra {
-  margin-top: 10px;
+.produto h3 {
+  margin: 10px 0 5px;
 }
 
-#paginacao button {
-  margin: 3px;
+.produto p {
+  font-size: 14px;
+  opacity: 0.85;
 }
