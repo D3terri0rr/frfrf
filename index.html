@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="login">
+    <h2>Acesso restrito</h2>
+    <form onsubmit="verificarSenha(event)">
+      <input type="password" id="senha" placeholder="Digite a senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <div id="catalogo" style="display:none;">
+    <input
+      type="text"
+      id="busca"
+      placeholder="Buscar produto..."
+      oninput="filtrarProdutos()"
+    />
+
+    <div id="produtos"></div>
+    <div id="paginacao"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

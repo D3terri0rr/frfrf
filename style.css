@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#login {
+  max-width: 300px;
+  margin: auto;
+}
+
+.produto {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.produto img {
+  max-width: 100%;
+}
+
+.compra {
+  margin-top: 10px;
+}
+
+#paginacao button {
+  margin: 3px;
+}
